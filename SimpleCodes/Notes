@@ -1,0 +1,122 @@
+
+<---------------chap3------------------------------->
+An integer can occupy 1, 2, 4, or 8
+
+An integer can occupy 1, 2, 4, or 8 bytes depending on which data type
+(i.e., byte, short, int, or long) is declared.
+
+8-Bit 		Binary Number Decimal Equivalent
+00000000 		0
+00000001 		1
+00000010 		2
+00000011 		3	
+00000100 		4
+. . .
+11111100 		252
+11111101 		253
+11111110 		254
+11111111 		255
+
+
+8-Bit Binary Number
+(with a Sign Bit) 		Decimal Equivalent
+0 0000000 				+0
+0 0000001 				+1
+0 0000010 				+2
+. . .
+0 1111111				 +127
+1 0000000				 -0
+1 0000001				 -1
+. . .
+1 1111110 				-126
+1 1111111 				-127
+
+
+
+
+
+The representation of a
+negative number is derived by first inverting all the bits (changing 1s to 0s and 0s to 1s) in the representation of the positive number and then adding 1. The following
+diagram illustrates the process:
+
+13 = 00001101
+
+invert
+11110010
+
+add 1
+-13 = 11110011
+
+Now let’s see how real numbers are stored in memory in floating-point format.
+We present only the basic ideas of storing real numbers in computer memory here.
+We omit the precise details of the Institute of Electronics and Electrical Engineers
+(IEEE) Standard 754 that Java uses to store real numbers.
+Real numbers are represented in the computer by using scientific notation. In
+base-10 scientific notation, a real number is expressed as
+A  10N
+where A is a real number and N is an integral exponent. For example, the mass of a
+hydrogen atom (in grams) is expressed in decimal scientific notation as 1.67339 
+10–24, which is equal to 0.00000000000000000000000167339.
+We use base-2 scientific notation to store real numbers in computer memory.
+Base-2 scientific notation represents a real number as follows:
+A  2N
+The float and double data types use 32 and 64 bits, respectively, with the number
+A and exponent N stored as follows:
+
+
+
+System.in is used to input a stream of bytes. We associate a Scanner object to
+System.in to input primitive data type.
+
+
+import java.util.*;
+Also works for math functions.
+
+The main method is the key to making a program executable
+
+<--------------------chap 4--------------------------------->
+Save one class definition per file. Use the name of the class followed by the suffix
+java as the file name. Follow this rule to avoid any unnecessary complications.
+
+template for bicycle class
+class Bicycle {
+	//data members
+	//methods
+}
+
+Table 4.1 The three methods of the Bicycle class. The first method is called
+a constructor
+Method 		 |	Parameter		|	Description
+===============================================================================
+Bicycle 	 |	None			|	Initializes the owner’s name to Unassigned.
+getOwnerName |	None 			|	Returns the owner’s name.
+setOwnerName |Name of the 		|    Assigns the bicycle owner’s name to the passed 			 |	owner	 		|		value
+				
+If a method is declared as private, then it cannot be called from the program
+that uses the class. It can only be called from the other methods of the same
+class.
+
+This is a value-returning method. When this method is called, it returns a
+value to the caller. The getOwnerName method returns a string value—the value of
+instance variable ownerName—so its return type is declared as String. A valuereturning
+method must include a return statement of the format
+return <expression> ;
+
+
+A method that returns information about an object (such as who is the owner
+of a bicycle) is called an accessor. The getOwnerName method is an accessor. An
+inverse of an accessor that sets a property of an object is called a mutator. The
+setOwnerName method is a mutator. Accessors and mutators are commonly called
+get and set methods, respectively. 
+
+
+
+There is one last thing to remember. The way the classes are written now, the
+easiest way to manage a program that includes multiple programmer-defined
+classes is to save the source files in the same folder (directory). We will learn how to organize classes into a package in Chapter 7 so we can manage the organization of classes in a more effective manner. Until then, just remember to place all sources files for a program in the same folder. If you don’t do this, the Java compiler and interpreter may not be able to compile and run the program.
+
+Designing a set of single-task methods is more manageable and easier to understand
+than having one method that performs all three tasks of input, computation,
+and output.We will call the methods getInput, computePayment, and displayOutput.
+We will also include one method called describeProgram that describes the purpose of
+the program to the user.

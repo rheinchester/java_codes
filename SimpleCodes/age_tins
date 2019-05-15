@@ -1,0 +1,16 @@
+			
+			System.out.println("Welcome user. please dial *131# to proceed");
+			Scanner sc = new Scanner(System.in);
+			String userDial = sc.next();
+			String dial = "*131#";	
+
+			// if()){
+			// 	System.out.println("Please dial 131");
+			// }
+			// else{
+			// 	System.out.println("1 data");
+			// 	System.out.println("2 Bumdles");
+			// 	System.out.println("3 goodybags");
+			// 	System.out.println("4 extratyme byte");
+			// 	System.out.println("5 bb plans");
+			// }!(userDial.equals(dial)
